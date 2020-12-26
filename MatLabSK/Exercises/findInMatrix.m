@@ -1,0 +1,6 @@
+function A = matrixCSums(M)
+
+
+
+
+        

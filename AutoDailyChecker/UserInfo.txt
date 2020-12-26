@@ -1,0 +1,5 @@
+{
+	"NetID": "sk2523",
+	"PW": "Draco13524312", 
+	"CDLoc": "/Users/Simar/Desktop/AutoDailyChecker/chromedriver"
+}

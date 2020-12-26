@@ -1,0 +1,17 @@
+format long
+volumeLIOH = 0.035;
+volumeHCL =
+molesLIOH = 0.0350 * 0.150; 
+molesHCL = volumeHCL * 0.150;
+totalvolume = volumeLIOH + volume;
+
+if molesLIOH > molesHCL
+    molesOH = molesLIOH - molesHCL;
+    pH = -log10(molesOHH/totalvolume);
+    disp(pH)
+else
+    molesH = molesHCL - molesOH;
+    pH = -log10(molesH/totalvolume); 
+    disp(pH)
+end
+
