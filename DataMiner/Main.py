@@ -4,7 +4,7 @@ import Smart
 import re
 from bs4 import BeautifulSoup
 
-company = "covid"
+company = "samsung"
 
 # Grabbing HTML and relevant information
 html = DataMine.URLParse(company, 20)
@@ -12,13 +12,20 @@ text = DataMine.Soupify(html)
 
 # Processing Headlines
 text = text.replace("...", " · ")
-title_headlines = text.split("· ")
+title_headlines = text.split("·")
+new_title_headlines = Smart.preprocess(title_headlines)
+
+for x in title_headlines:
+    print(x)
+print("------vs-------")
+for x in new_title_headlines:
+    print(x)
+
 
 # Sentiment analysis and Top Words generation
-word_map = Smart.word_chart(title_headlines)
+word_map = Smart.word_chart(new_title_headlines)
 word_map.remove(company)
-word_map.remove("mins")
-x = Smart.analyzer(title_headlines)
+x = Smart.analyzer(new_title_headlines)
 y = Smart.vcompare(x)
 
 print("Sentiment Analysis")
